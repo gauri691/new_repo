@@ -28,6 +28,7 @@ public class Hotels {
         }
         else{
             totalAmount=base*night;
+            totalAmount += totalAmount * 0.10;
             System.out.println("Total Amount:"+totalAmount);
         }
     }
