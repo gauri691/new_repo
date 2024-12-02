@@ -12,16 +12,16 @@ public class students {
         }
         for(int i=0;i<5;i++) {
             for (int j = 0; j < 5; j++) {
-                System.out.println("enter the marks for student:" + marks[i][j]);
+                System.out.println("marks for student"+ (i+1)+ " " +"subject"+(j+1)+" "+":"+marks[i][j]);
             }
         }
         int total=0;
-        for(int i=0;i<5;i++){
-            for(int j=0;j<5;j++){
-                 total += marks[i][j];
+        for(int j=0;j<5;j++) {
+            for (int i= 0; i< 5; i++) {
+                total += marks[i][j];
             }
-            double avrg=total/5.0;
-            System.out.println("average:"+avrg);
+            double avrg = total / 5.0;
+            System.out.println("Subject " + (j + 1) + ": " + avrg);
         }
     }
 }
