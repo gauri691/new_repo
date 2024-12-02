@@ -15,8 +15,8 @@ public class students {
                 System.out.println("marks for student"+ (i+1)+ " " +"subject"+(j+1)+" "+":"+marks[i][j]);
             }
         }
-        int total=0;
         for(int j=0;j<5;j++) {
+            int total=0;
             for (int i= 0; i< 5; i++) {
                 total += marks[i][j];
             }
