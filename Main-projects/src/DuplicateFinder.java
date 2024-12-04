@@ -1,6 +1,6 @@
 import java.util.HashSet;
 import java.util.Scanner;
-public class strings
+public class DuplicateFinder
 {
     public static void main(String[] args)
     {
@@ -10,11 +10,11 @@ public class strings
             sentence =sentence.toLowerCase();
             String[] words = sentence.split(" ");
             HashSet hashset=new HashSet();
-        for(String i:words)
+        for(String word:words)
         {
-                if (!hashset.add(i))
+                if (!hashset.add(word))
                 {
-                    System.out.println("Duplicate word is:"+i);
+                    System.out.println("Duplicate word is:"+word);
                 }
             }
         }
