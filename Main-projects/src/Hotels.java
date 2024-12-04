@@ -32,10 +32,11 @@ public class Hotels {
         System.out.println("Enter the number of nights:");
         int night = sc.nextInt();
         System.out.println("Enter the room type:\n 1.STANDARD-Basic Wi-Fi, Television \n 2. DELUXE-Wi-Fi, Television, Air Conditioner \n 3.SUITE-Wi-Fi, Television, Air Conditioner, Mini Bar, Pool Access ");
-        String roomType = sc.next().toLowerCase();
+        String roomType = sc.next().toUpperCase();
         RoomType type=RoomType.valueOf(roomType);
         double totalAmount;
         totalAmount = calculateTotalAmount(type, night);
+        System.out.print("Total Amount:"+totalAmount);
     }
 }
 
