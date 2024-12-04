@@ -4,33 +4,34 @@ public class Hotels {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the number of nights:");
         int night = sc.nextInt();
-        System.out.println("Enter the room type:\n 1.STANDARD \n 2. DELUXE \n 3.SUITE ");
+        System.out.println("Enter the room type:\n 1.STANDARD-Basic Wi-Fi, Television \n 2. DELUXE-Wi-Fi, Television, Air Conditioner \n 3.SUITE-Wi-Fi, Television, Air Conditioner, Mini Bar, Pool Access ");
         String roomType = sc.next().toLowerCase();
-        double totalAmount=0.0;
-        double roomCost;
-        double base = switch (roomType) {
-            case "standard" -> 500;
+        double totalAmount;
+        enum RoomType {
+            STANDARD(500, "Basic Wi-Fi, Television"),
+            DELUXE(800, "Wi-Fi, Television, Air Conditioner"),
+            SUITE(1000, "Wi-Fi, Television, Air Conditioner, Pool Access");
 
-            case "deluxe" -> 800;
+            private final double baseRate;
+            private final String facilities;
 
-            case "suite" -> 1000;
-
-            default -> {
-                System.out.println("Invalid room type.");
-                yield 0.0;
+            RoomType(double baseRate, String facilities) {
+                this.baseRate = baseRate;
+                this.facilities = facilities;
             }
-        };
-        if (night >= 5) {
-            totalAmount=base*night;
+
+            public double getBaseRate() {
+                return baseRate;
+            }
+        }
+            if (night >= 5) {
+            totalAmount = RoomType.getBaseRate() * night;
             totalAmount -= totalAmount * 0.15;
-            totalAmount += totalAmount * 0.10;
-            System.out.println("Total Amount:"+totalAmount);
+        } else {
+            totalAmount = RoomType.getBaseRate() * night;
         }
-        else{
-            totalAmount=base*night;
-            totalAmount += totalAmount * 0.10;
-            System.out.println("Total Amount:"+totalAmount);
-        }
+        totalAmount += totalAmount * 0.10;
+        System.out.println("Total Amount:" + totalAmount);
     }
 }
 

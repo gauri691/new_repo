@@ -13,9 +13,9 @@ public class StringValidity {
             }
             else if (i == ')' || i == ']' || i == '}')
             {
-                if (stack.isEmpty()) {
+                /*if (stack.isEmpty()) {
                     System.out.println("Stack is empty");
-                }
+                }*/
                 char top = stack.pop();
 
                 if ((i == ')' && top != '(') || (i == '}' && top != '{') || (i == ']' && top != '[')) {
