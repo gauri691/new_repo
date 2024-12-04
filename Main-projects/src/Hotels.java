@@ -5,7 +5,7 @@ public class Hotels {
         DELUXE(800, "Wi-Fi, Television, Air Conditioner"),
         SUITE(1000, "Wi-Fi, Television, Air Conditioner, Pool Access");
 
-        private double baseRate = 0;
+        private final double baseRate;
         private final String facilities;
 
         RoomType(double baseRate, String facilities) {
