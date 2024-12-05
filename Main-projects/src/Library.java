@@ -1,38 +1,55 @@
-public class Book {
-    private String bookAuthor;
-    private int bookId;
-    private String bookTitle;
-    private boolean bookAvailability;
-    private boolean bookIssued;
+import java.util.*;
+interface searchable {
+    boolean search(String bookTitle);
+}
+public class Library {
+    int maxLength=100;
+   public static Libraryitems items[]=new Librayitems[maxLength];
+   int count=0;
 
-    public Book(String bookAuthor,int bookId,String bookTitle){
-        this.bookAuthor=bookAuthor;
-        this.bookId=bookId;
-        this.bookTitle=bookTitle;
-        this.bookIssued=bookIssued=true;//book is issued
-        this.bookAvailability=bookAvailability;
-    }
-    public String getTitle(){
-        return bookTitle;
-    }
-    public int getId(){
-        return bookId;
-    }
-    public String getAuthor(){
-        return bookAuthor;
-    }
-    public boolean getAvailabiility(){
-        return bookIssued;
-    }
-    public void bookissue(){
-        if(getAvailabiility()){
-            System.out.println("Sorry book is issued");
+   public void addItem(Book book){
+       if(count<maxLength){
+           items[count++]=book;
+           System.out.println("Book '" + book.getTitle() + "' added to the library.");
+       }
+       else{
+           System.out.println("library is full");
+       }
+   }
+    public void  issueBook(int bookId) {
+        for (int i = 0; i < count; i++) {
+            Book book = books[i];
+            if (book.getId() == bookId) {
+                book.issueBook();
+                return;
+            }
         }
-        else{
-            System.out.println("Book is available!!");
+        System.out.println("Book with ID " + bookId + " not found.");
+    }
+    public void returnBook(int bookId) {
+        for (int i = 0; i < count; i++) {
+            Book book = book[i];
+            if (book.getId() == bookId) {
+                book.returnBook();
+                return;
+            }
+        }
+        System.out.println("Book with ID " + bookId + " not found.");
+    }
+
+    public void displayBook(){
+    System.out.println("Books in the library:");
+        for (int i = 0; i < count; i++) {
+            book[i].displayDetails();
         }
     }
-    public void displayDetails(String bookTitle,String bookAuthor,int bookId){
-        System.out.println("Book id:"+bookId+"Book Title:"+ bookTitle+"Book Author:"+bookAuthor);
+}
+
+public boolean search(String title){
+    for (int i = 0; i < count; i++) {
+        if (book[i].getTitle().equalsIgnoreCase(title)) {
+            return true;
+        }
     }
+    return false;
 }
