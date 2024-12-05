@@ -1,3 +1,5 @@
+package LibraryManagement;
+
 public class Book {
     private String bookAuthor;
     private int bookId;
@@ -29,10 +31,10 @@ public class Book {
             System.out.println("Sorry book is issued");
         }
         else{
-            System.out.println("Book is available!!");
+            System.out.println("LibraryManagement.Book is available!!");
         }
     }
     public void displayDetails(String bookTitle,String bookAuthor,int bookId){
-        System.out.println("Book id:"+bookId+"Book Title:"+ bookTitle+"Book Author:"+bookAuthor);
+        System.out.println("LibraryManagement.Book id:"+bookId+"LibraryManagement.Book Title:"+ bookTitle+"LibraryManagement.Book Author:"+bookAuthor);
     }
 }
