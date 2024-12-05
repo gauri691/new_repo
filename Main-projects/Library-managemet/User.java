@@ -71,7 +71,7 @@ class Librarian extends User{
     public Librarian(String name,String address,int id){
         super(name,address,id);
     }
-    public void methods{
-        
+    public void methods(){
+
     }
 }
