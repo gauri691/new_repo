@@ -1,17 +1,18 @@
 package LibraryManagement;
 
+
 public class Books {
     private final String bookAuthor;
     private final int bookId;
     private final String bookTitle;
     private boolean bookAvailability;
-    private boolean bookIssued;
+    private static boolean bookIssued;
 
     public Books(String bookAuthor, int bookId, String bookTitle) {
         this.bookAuthor = bookAuthor;
         this.bookId = bookId;
         this.bookTitle = bookTitle;
-        this.bookIssued = bookIssued=true;//book is issued
+        this.bookIssued = bookIssued = true;//book is issued
         this.bookAvailability = bookAvailability;
     }
 
@@ -27,15 +28,25 @@ public class Books {
         return bookAuthor;
     }
 
-    public boolean getAvailabiility() {
+    public static boolean getAvailabiility() {
         return bookIssued;
     }
 
-    public void bookissue() {
+
+    public static void issueBook() {
         if (getAvailabiility()) {
-            System.out.println("Sorry book is already issued");
+            System.out.println("The book has been issued.");
         } else {
-            System.out.println("Book is available!!");
+            System.out.println("Sorry, the book is already issued.");
+        }
+    }
+
+    public static void returnBook() {
+        if (!getAvailabiility()) {
+            System.out.println("The book has been returned.");
+        } else {
+            System.out.println("The book was not issued.");
         }
     }
 }
+

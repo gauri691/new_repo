@@ -8,7 +8,7 @@ abstract class LibraryItem {
      static final int maxLength = 100;
      public static Books[] items = new Books[maxLength];
 
-     int count = 3;
+     int count = 1;
 
      public void addBook(Books book) {
          if (count < maxLength) {
@@ -20,30 +20,30 @@ abstract class LibraryItem {
      }
 
      public void issueBook(int bookId) {
-         for (int i = 0; i <count ; i++) {
-             Books book = items[i];
+         for (Books book : items) {
+             System.out.println(book);
              if (book.getId() == bookId) {
-                 System.out.println("The book has been issued");
-                 return;
+                 Books.issueBook();
+                 break;
              }
          }
-         System.out.println(STR."Book with ID \{bookId} not found.");
      }
 
+
      public void returnBook(int bookId) {
-         for (int i = 0; i < count; i++) {
-             if (items[i].getId() == bookId) {
-                 System.out.println("The book has been returned");
+         for (Books book : items) {
+             if (book.getId() == bookId) {
+                 Books.returnBook();
              }
-             return;
          }
-         System.out.println(STR."Book with ID \{bookId} not found.");
      }
 
      public void displayBooks() {
          System.out.println("Books in the library:");
-         for (int i = 0; i < count; i++) {
-             System.out.println(STR."Book id:\{items[i].getId()}Book Title:\{items[i].getTitle()}Book Author:\{items[i].getAuthor()}");
+         for (Books book : items) {
+             {
+                 System.out.println(STR."Book id:\{book.getId()}Book Title:\{book.getTitle()}Book Author:\{book.getAuthor()}");
+             }
          }
      }
  }
