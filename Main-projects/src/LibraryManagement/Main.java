@@ -1,21 +1,44 @@
 package LibraryManagement;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Library library = new Library();
-        User member = new Member("Gauri", "123 Main St", 1);
-        User visitor = new visitor("Abhimanyu", "456 Oak St", 2);
-        User librarian = new Librarian("Navin", "789 Pine St", 3);
-
-        library.addBook(new Book("The Great Gatsby", "F. Scott Fitzgerald", 101));
-        library.addBook(new Book("To Kill a Mockingbird", "Harper Lee", 102));
-
-        member.methods(library);
-        librarian.methods(library);
-        visitor.methods(library);
+        Scanner sc=new Scanner(System.in);
+        library.addBook(new Books("F. Scott Fitzgerald", 101, "The Great Gatsby"));
+        library.addBook(new Books("Harper Lee", 102, "To Kill a Mockingbird"));
+        System.out.println("Choose an option:");
+        System.out.println("1.Member");
+        System.out.println("2.Visitor");
+        System.out.println("3.Librarian");
+        int choice = sc.nextInt();
+        if(choice ==1) {
+            System.out.println("Enter your name:");
+            String memberName = sc.nextLine();
+            sc.nextLine();
+            System.out.println("Enter your address:");
+            String memberAdd = sc.nextLine();
+            System.out.println("Enter your member ID:");
+            int memberId = sc.nextInt();
+            User member = new Member(memberName, memberAdd, memberId);
+            member.methods(library);
+        }
+        else if(choice==3) {
+            User librarian = new Librarian("Charlie", "789 Pine St", 3);
+            librarian.methods(library);
+        }
+        else{
+            System.out.println("Enter your name:");
+            String visitorName=sc.nextLine();
+            sc.nextLine();
+            System.out.println("Enter your address:");
+            String visitorAdd=sc.nextLine();
+            System.out.println("Enter your member ID:");
+            int visitorId=sc.nextInt();
+            User visitor =new Visitor(visitorName,visitorAdd,visitorId);
+            visitor.methods(library);
+        }
     }
 }
 
-
-
-    }
-}
