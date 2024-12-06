@@ -30,7 +30,8 @@ public class Librarian extends User{
                 case 2:{
                     library.displayBooks();
                 }
-            }
+            }System.out.println("Choose an option:");
+             choice =sc.nextInt();
         }while(choice!=2);
     }
 }

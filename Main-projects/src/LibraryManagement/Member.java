@@ -5,9 +5,7 @@ import static LibraryManagement.Library.items;
 
 public class Member extends User implements Searchable {
     public boolean search(String title) {
-        int count = 0;
-        for (int i = 0; i <=count; i++) {
-            Books book = items[i];
+        for (Books book : items) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 return true;
             }
@@ -23,6 +21,7 @@ public class Member extends User implements Searchable {
     Scanner sc = new Scanner(System.in);
 
     public void methods(Library library) {
+
         System.out.println("Choose an option:");
         System.out.println("1.Issue Book");
         System.out.println("2.Return Book");
@@ -59,7 +58,8 @@ public class Member extends User implements Searchable {
                     }
                     break;
                 }
-            }
+            } System.out.println("Choose an option:");
+            choice = sc.nextInt();
         } while (choice != 4);
     }
 }

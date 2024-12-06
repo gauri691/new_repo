@@ -33,19 +33,19 @@ public class Books {
     }
 
 
-    public static void issueBook() {
-        if (getAvailabiility()) {
+    public static void issueBook(Books book) {
+        if (book.getAvailabiility()) {
             System.out.println("The book has been issued.");
         } else {
             System.out.println("Sorry, the book is already issued.");
         }
     }
 
-    public static void returnBook() {
-        if (!getAvailabiility()) {
-            System.out.println("The book has been returned.");
+    public static void returnBook(Books book) {
+        if (book.getAvailabiility()) {
+            System.out.println("The book has  been returned.");
         } else {
-            System.out.println("The book was not issued.");
+            System.out.println("the book has not been returned");
         }
     }
 }

@@ -14,6 +14,7 @@ public  class User {
          System.out.println("Welcome " + name + "!");
          System.out.println("Choose an action:");
          System.out.println("1. View Available Books");
+         Object book = null;
          library.displayBooks();
          return ;
      }

@@ -42,7 +42,8 @@ public class Main {
                     User visitor = new Visitor(visitorName, visitorAdd, visitorId);
                     visitor.methods(library);
                 }
-            }
+            }System.out.println("Choose an option:");
+             choice = sc.nextInt();
         } while (choice != 3);
     }
 }
