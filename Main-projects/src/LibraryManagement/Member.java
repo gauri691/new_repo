@@ -61,6 +61,7 @@ public class Member extends User implements Searchable {
             } System.out.println("Choose an option:");
             choice = sc.nextInt();
         } while (choice != 4);
+        return;
     }
 }
 
