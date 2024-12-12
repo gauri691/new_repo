@@ -42,9 +42,19 @@ public class Employee {
         System.out.println("department:" + department.getDepartmentName());
         System.out.println("Street:" + address.street + "  house number:" + address.houseNO + "  pincode:" + address.pincode);
     }
-
-    public static void main(String[] args) {
-        Employee emp = new Employee(101, "Gauri", "CS", "123 Elm St", "4802", "695029");
-        emp.displayDetails();
-    }
 }
+    class Main {
+        public static void main(String[] args) {
+            Employee emp = new Employee(101, "Gauri", "CS", "123 Elm St", "4802", "695029");
+            //creating object of Department class
+
+            Employee.Department nestedObject = new Employee.Department("IT");
+            emp.displayDetails();
+
+            // Creating object of address inner class
+
+            Employee.Address addressObj = emp.new Address("123 Elm St", "4802", "695029");
+            emp.displayDetails();
+
+        }
+    }
