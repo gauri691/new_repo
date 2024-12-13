@@ -64,8 +64,8 @@ class CRUD{
         }
         if (updateId != null) {
             System.out.println("Enter the name:");
-            String newName = sc.nextLine();
-            sc.nextLine();
+            String newName = sc.next();
+            //sc.nextLine();
             updateId.setName(newName);
             System.out.println("Enter salary:");
             int newSalary = sc.nextInt();
