@@ -1,26 +1,33 @@
 import java.util.*;
 import java.util.ArrayList;
-public class Collection {
+public class Employe {
     String name;
     int id;
     int salary;
 
-    public Collection(String name, int id, int salary) {
+    public Employe(String name, int id, int salary) {
         this.name = name;
         this.id = id;
         this.salary = salary;
     }
-    public void displayCollection() {
+    public void display() {
         System.out.println("ID: " + id + ", Name: " + name + ", Salary: " + salary);
     }
 
     public int getId() {
         return id;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
 }
 
 class CRUD{
-    public static ArrayList<Collection> employe=new ArrayList<Collection>();
+    public static ArrayList<Employe> employe=new ArrayList<Employe>();
     public static Scanner sc=new Scanner(System.in);
 
     public static void addEmployee(){
@@ -30,7 +37,7 @@ class CRUD{
         int id=sc.nextInt();
         System.out.println("Enter salary:");
         int salary=sc.nextInt();
-        Collection newEmployee=new Collection(name,id,salary);
+        Employe newEmployee=new Employe(name,id,salary);
         employe.add(newEmployee);
         System.out.println("New employee added!!");
     }
@@ -40,16 +47,16 @@ class CRUD{
             System.out.println("The list is empty");
         }
         else{
-            for(Collection emp: employe){
-                emp.displayCollection();
+            for(Employe emp: employe){
+                emp.display();
             }
         }
     }
     public static void updateEmployee() {
         System.out.println("Enter the id to update:");
         int id = sc.nextInt();
-        Collection updateId = null;
-        for (Collection emp : employe) {
+        Employe updateId = null;
+        for (Employe emp : employe) {
             if (emp.getId() == id) {
                 updateId = emp;
                 break;
@@ -59,13 +66,11 @@ class CRUD{
             System.out.println("Enter the name:");
             String newName = sc.nextLine();
             sc.nextLine();
-            System.out.println("Enter the id:");
-            int newId = sc.nextInt();
+            updateId.setName(newName);
             System.out.println("Enter salary:");
             int newSalary = sc.nextInt();
-            Collection newEmployee = new Collection(newName, newId, newSalary);
-            employe.add(newEmployee);
-            System.out.println("New employee added!!");
+            updateId.setSalary(newSalary);
+            System.out.println("New employee updated!!");
         } else {
             System.out.println("No employee is found with this id");
         }
@@ -73,8 +78,8 @@ class CRUD{
         public static void deleteEmployee(){
             System.out.println("Enter the id to update:");
             int Id=sc.nextInt();
-            Collection deleteId=null;
-            for(Collection emp: employe){
+            Employe deleteId=null;
+            for(Employe emp: employe){
                 if(emp.getId()==Id){
                     deleteId=emp;
                     break;
@@ -117,9 +122,9 @@ public static void main(String[] args) {
                 return;
             default:
                 System.out.println("Invalid choice. Please try again.");
+            }
         }
     }
-}
 }
 
 
