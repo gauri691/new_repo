@@ -6,8 +6,8 @@ import java.util.*;
 public class EmployeException {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[] name = new String[100];
-        double[] salary = new double[100];
+        String[] name = new String[5];
+        double[] salary = new double[5];
         int i;
         for ( i = 0; i < 5; i++) {
             try {
