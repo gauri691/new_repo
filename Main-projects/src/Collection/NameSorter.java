@@ -1,3 +1,5 @@
+package Collection;
+
 import java.util.Scanner;
 import java.util.TreeSet;
 

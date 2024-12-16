@@ -1,3 +1,5 @@
+package Collection;
+
 import java.util.*;
 public class CallCenter {
     public static void main(String[] args) {
