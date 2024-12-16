@@ -13,7 +13,7 @@ public class CallCenter {
             String firstCall = callList.removeFirst();
             System.out.println("Processing:" + firstCall);
                 System.out.println("Calls remaining to be proceeded:"+callList);
-                System.out.println("no remaining calls");
             }
+            System.out.println("no remaining calls");
         }
     }
