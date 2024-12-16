@@ -35,7 +35,7 @@ import java.util.Scanner;
                         String author = sc.nextLine();
                         System.out.print("Enter book ID: ");
                         int bookId = sc.nextInt();
-                        Books newBook = new Books(bookId,title,author,true);
+                        Books newBook = new Books(title,author,true,bookId);
                         library.addBook(newBook);
                         System.out.println("Book added: " + newBook);
                         break;

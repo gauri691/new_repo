@@ -1,7 +1,6 @@
 package LibraryProject;
-
 import java.util.Scanner;
-
+import LibraryProject.*;
 
     class Member extends User {
 
@@ -33,7 +32,7 @@ import java.util.Scanner;
                     case 2:
                         System.out.print("Enter the book ID to issue: ");
                         int bookId = sc.nextInt();
-                        for (Books book : library.getItems()) {
+                        for (Books book : library.getItems().keySet())
                             if (book.getId() == bookId) {
                                 if (book.isBookAvailability()) {
                                     System.out.println("The book has been issued.");
@@ -43,19 +42,17 @@ import java.util.Scanner;
                                 }
                                 break;
                             }
-                        }
                         break;
                     case 3:
                         System.out.print("Enter the book ID to return: ");
                         bookId = sc.nextInt();
-                        for (Books book : library.getItems()) {
+                        for (Books book : library.getItems().keySet())
                             if (book.getId() == bookId) {
                                 if (book.isBookAvailability()) {
                                     System.out.println("The book has been returned.");
                                     book.setBookAvailability(true);
                                 }
                             }
-                        }
                         break;
 
                     case 4:
@@ -76,13 +73,11 @@ import java.util.Scanner;
                 }
             }
         }
-
         public boolean search(String title) {
-            for (Books book : library.getItems()) {
+            for (Books book : library.getItems().keySet())
                 if (book.getTitle().equalsIgnoreCase(title)) {
                     return true;
                 }
-            }
             return false;
         }
     }

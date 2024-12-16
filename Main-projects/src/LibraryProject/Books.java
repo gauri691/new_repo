@@ -6,7 +6,7 @@ package LibraryProject;
         private final String bookAuthor;
         private boolean bookAvailability;
 
-        public Books(int bookId, String bookTitle, String bookAuthor, boolean bookAvailability) {
+        public Books(String bookTitle, String bookAuthor, boolean bookAvailability,int bookId) {
             this.bookId = bookId;
             this.bookTitle = bookTitle;
             this.bookAuthor = bookAuthor;
