@@ -12,15 +12,8 @@ public class CallCenter {
         while (!callList.isEmpty()) {
             String firstCall = callList.removeFirst();
             System.out.println("Processing:" + firstCall);
-
-            if (!callList.isEmpty()) {
-                System.out.println("Calls remaining to be proceeded:");
-                for (String remainingCalls : callList) {
-                    System.out.println(remainingCalls);
-                }
-            } else {
+                System.out.println("Calls remaining to be proceeded:"+callList);
                 System.out.println("no remaining calls");
             }
         }
     }
-}
