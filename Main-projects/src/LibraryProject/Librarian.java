@@ -30,12 +30,13 @@ import java.util.Scanner;
                     case 2:
                         System.out.print("Enter book title: ");
                         String title = sc.nextLine();
-
                         System.out.print("Enter book author: ");
                         String author = sc.nextLine();
                         System.out.print("Enter book ID: ");
                         int bookId = sc.nextInt();
-                        Books newBook = new Books(title,author,true,bookId);
+                        System.out.print("Enter number of copies: ");
+                        int copies = sc.nextInt();
+                        Books newBook = new Books(title,author,true,bookId,copies);
                         library.addBook(newBook);
                         System.out.println("Book added: " + newBook);
                         break;

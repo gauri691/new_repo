@@ -37,6 +37,8 @@ import LibraryProject.*;
                                 if (book.isBookAvailability()) {
                                     System.out.println("The book has been issued.");
                                     book.setBookAvailability(false);
+                                    int borrowCopies=library.getItems().get(book) - 1;
+                                    library.getItems().put(book, borrowCopies);
                                 } else {
                                     System.out.println("Sorry, the book is already issued.");
                                 }
@@ -51,6 +53,8 @@ import LibraryProject.*;
                                 if (book.isBookAvailability()) {
                                     System.out.println("The book has been returned.");
                                     book.setBookAvailability(true);
+                                    int availableCopies = library.getItems().get(book) + 1;
+                                    library.getItems().put(book, availableCopies);
                                 }
                             }
                         break;

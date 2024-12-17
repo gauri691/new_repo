@@ -5,12 +5,14 @@ package LibraryProject;
         private final String bookTitle;
         private final String bookAuthor;
         private boolean bookAvailability;
+        private int numberOfCopies;
 
-        public Books(String bookTitle, String bookAuthor, boolean bookAvailability,int bookId) {
+        public Books(String bookTitle, String bookAuthor, boolean bookAvailability,int bookId,int numberOfCopies) {
             this.bookId = bookId;
             this.bookTitle = bookTitle;
             this.bookAuthor = bookAuthor;
             this.bookAvailability = bookAvailability;
+            this.numberOfCopies=numberOfCopies;
         }
 
         public String getTitle() {
@@ -31,6 +33,10 @@ package LibraryProject;
 
         public void setBookAvailability(boolean bookAvailability) {
             this.bookAvailability = bookAvailability;
+        }
+
+        public int getNumberOfCopies() {
+            return numberOfCopies;
         }
     }
 
