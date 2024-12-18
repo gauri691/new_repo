@@ -15,19 +15,19 @@ public class Generic<T extends Number> {
         return (T) divNum(num1, num2);
     }
 
-     Number addNum(Number num1, Number num2) {
+    private Number addNum(Number num1, Number num2) {
         return num1.doubleValue() + num2.doubleValue();
     }
 
-     Number subNum(Number num1, Number num2) {
+    private Number subNum(Number num1, Number num2) {
         return num1.doubleValue() + num2.doubleValue();
     }
 
-     Number mulNum(Number num1, Number num2) {
+    private Number mulNum(Number num1, Number num2) {
         return num1.doubleValue() * num2.doubleValue();
     }
 
-     Number divNum(Number num1, Number num2) {
+    private Number divNum(Number num1, Number num2) {
         if (num2.doubleValue() == 0) {
             System.out.println("Cannot divide by 0");
         }
